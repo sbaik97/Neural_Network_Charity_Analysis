@@ -71,7 +71,7 @@ From Alphabet Soup’s business team, we received a CSV file containing more tha
 
 ![first_accuracy_fuction](Resources/first_accuracy_fuction.png)
 
-**First_accuracy_graph**
+**First_loss_accuracy**
 
 ![firstTrial_loss_accuracy](Resources/firstTrial_loss_accuracy.png)
 
