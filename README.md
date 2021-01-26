@@ -31,6 +31,7 @@ From Alphabet Soup’s business team, we received a CSV file containing more tha
 
 * After merging the one-hot encoding DataFrame with the original DataFrame, and drop the originals, the merged DataFrame should look like this:
 
+* one-hot encoding DataFrame
 ![one-hot encoding DataFrame](Resources/application_df_head.png)
 
 
@@ -39,16 +40,18 @@ From Alphabet Soup’s business team, we received a CSV file containing more tha
 **Objects: Using the knowledge of TensorFlow, we’ll design a neural network, or deep learning model, to create a binary classification model that can predict if an Alphabet Soup–funded organization will be successful based on the features in the dataset.**
 
   
-
 * We attempted two hidden_nodes_layer with 8 neuron network in the first layer and 5 in the second.Sequntial modle is used in this trainin, and the first and second layers used relu activation fuction, and the output layer had a sigmoid activation function. The relu does better with nonlinear data, and two layers allows for a second layer to reweight the inputs from the first layer. Here is the preformance metrics of this model.
 
-
+* NN Summary
 ![nn_summary](Resources/nn_summary.png)
 
 
 * After modeling we have compiled, trained, and evaluated your binary classification model to calculate the model’s loss and accuracy. we also create a callback that saves the model's weights every 5 epochs. Here are the accuracy and loss histories of this model.
 
+* Accuracy_graph
 ![accuracy_history](Resources/accuracy_fuction_0.png)
+
+* Loss_graph
 ![loss_history](Resources/loss_fuction_0.png)
 
 
@@ -60,30 +63,44 @@ From Alphabet Soup’s business team, we received a CSV file containing more tha
 
 * First trial: We attempted two hidden_nodes_layer with 8 neuron network in the first layer and 5 in the second. I also bucket the  it the value as ohters if the conouts of APPLICATION_TYPE and CLASSIFICATION are less than 1000. The first, second, and output layers applied the linear activation fuction. Here are the accuracy value and its history figure of this model.
 
+* First_accuracy_graph
 ![first_accuracy_fuction](Resources/first_accuracy_fuction.png)
+
+* First_accuracy_graph
 ![firstTrial_loss_accuracy](Resources/firstTrial_loss_accuracy.png)
 
 
 * Second attempt:  I added the number of first and second layers with with 12 neuron network in the first layer and 6 in the second. I also changed the the first, second, and output layers' activation fuction as relu, relu, and sigmoid fuctions. The accuracy is higher than the first trail but still less than 75%. Here are the accuracy value and its history figure of this model.
 
+* Second_accuracy_graph
 ![second_accuracy_fuction](Resources/second_accuracy_fuction.png)
+
+* Second_loss_accuracy
 ![secondTrial_loss_accuracy](Resources/secondTrial_loss_accuracy.png)
 
 
 * Third attempt:  I added third layers with the activation functions: relu, and sigmoid fuctions. By adding a third layer, I wanted to give the model another chance to reweight the inputs from the second layer to the third. However, the accuracy is the same with the second trail and still less than 75%. Here are the accuracy value and its history figure of this model.
 
-
+* Third_accuracy_graph
 ![third_accuracy_fuction](Resources/third_accuracy_fuction.png)
+
+* ThirdTrial_loss_accuracy
 ![thirdTrial_loss_accuracy](Resources/thirdTrial_loss_accuracy.png)
 
 * Forth attempt: I also lowered the threshold for the classification and APPLICATION_TYPE columns so that there were more unique values from that column. I also divided the ask_amount colume to specfic values and merged it to the application_df. The accuracy slightly increased but still slimliar to the second, third tirals. Here are the accuracy value and its history figure of this model.
 
-![fourth_accuracy_fuction](Resources/fourth_accuracy_fuction.png))
+* Fourth_accuracy_graph
+![fourth_accuracy_fuction](Resources/fourth_accuracy_fuction.png)
+
+* FourthTrial_loss_accuracy
 ![fourthTrial_loss_accuracy](Resources/fourthTrial_loss_accuracy.png)
 
-* Fifth attempt: Lastly, I removed the " STATUS" column as well as I thought it was confusing the model. I also remove the possible cartegories but the accuracy is still not changed much when comparing with the prior trials. Here are the accuracy value and its history figure of this model.
+* Fifth attempt: Lastly, I removed the " STATUS" column because I thought it was confusing the model. I also remove the possible cartegories but the accuracy was still not changed much when comparing with the prior trials. Here are the accuracy value and its history figure of this model.
 
+* Fifth_accuracy_graph
 ![fifth_accuracy_fuction](Resources/fifth_accuracy_fuction.png)
+
+* FifthTrial_loss_accuracy
 ![fifthTrial_loss_accuracy](Resources/fifthTrial_loss_accuracy.png)
 
 ## Summary
