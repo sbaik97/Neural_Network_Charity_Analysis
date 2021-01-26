@@ -90,4 +90,4 @@ From Alphabet Soup’s business team, we received a CSV file containing more tha
 
 ## Summary
 
-After five attempts, I was unable to create a model that could preform a 75% accuracy rating. I added extra layers, applied the different activation fuctions, and remove and added the additional valiables in the database, but it still lowere than the target accuracy values. This is potentially due to the noisy variables. Even we use correct layer size and activation fuction, the data itself most important to determine the accuracy of model. 
+After five attempts, I was unable to create a model that could preform a 75% accuracy rating. I added extra layers, applied the different activation fuctions, and clarified the additional valiables in the database, but it still lowere than the target accuracy values. This is potentially due to the noisy variables. Even we use correct layer size and activation fuction, the data itself most important to determine the accuracy of model. 
