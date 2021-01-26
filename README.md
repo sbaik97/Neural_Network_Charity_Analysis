@@ -40,7 +40,7 @@ From Alphabet Soup’s business team, we received a CSV file containing more tha
 
   
 
-* We attempted two hidden_nodes_layer in the modle with 8 neuron network in the first layer and 5 in the second.Sequntial modle is used in this trainin, and the first and second layers used relu and the output layer had a sigmoid activation function. The relu does better with nonlinear data, and two layers allows for a second layer to reweight the inputs from the first layer. Here is the preformance metrics of this model.
+* We attempted two hidden_nodes_layer with 8 neuron network in the first layer and 5 in the second.Sequntial modle is used in this trainin, and the first and second layers used relu activation fuction, and the output layer had a sigmoid activation function. The relu does better with nonlinear data, and two layers allows for a second layer to reweight the inputs from the first layer. Here is the preformance metrics of this model.
 
 
 ![nn_summary](Resources/nn_summary.png)
@@ -58,30 +58,36 @@ From Alphabet Soup’s business team, we received a CSV file containing more tha
 **Objects: Using your knowledge of TensorFlow, optimize your model in order to achieve a target predictive accuracy higher than 75%. If you can't achieve an accuracy higher than 75%, you'll need to make at least three attempts to do so.**
 
 
-* First trial: We attempted two hidden_nodes_layer in the modle with 8 neuron network in the first layer and 5 in the second. 
-We also replace it the value as ohters if the conouts of APPLICATION_TYPE and CLASSIFICATION are less than 1000.  We attempted two hidden_nodes_layer in the modle with 8 neuron network in the first layer and 5 in the second.Sequntial modle is used in this trainin, and the first and second layers used relu and the output layer had a sigmoid activation function. The relu does better with nonlinear data, and two layers allows for a second layer to reweight the inputs from the first layer. Here are the accuracy of this model.
+* First trial: We attempted two hidden_nodes_layer with 8 neuron network in the first layer and 5 in the second. I also bucket the  it the value as ohters if the conouts of APPLICATION_TYPE and CLASSIFICATION are less than 1000. The first, second, and output layers applied the linear activation fuction. Here are the accuracy value and its history figure of this model.
 
-![first_accuracy_fuction](Optimization/Resources/first_accuracy_fuction.png)
-
-
-*Second attempt: I removed the "SPECIAL_CONSIDERATIONS" column as I thought this might have been confusing the model. I also lowered the threshold for the classification column so that there were more unique values from that column. I also added a third layer with 6 neurons apart of it. By adding a third layer, I wanted to give the model another chance to reweight the inputs from the second layer to the third. Here are the preformance metrics of this model.
-
-![ASC_Ov1_scores](https://github.com/Wall-E28/neural_network_charity_analysis/blob/main/Images/ASC_Ov1_scores.png)
+![firstTrial_loss_accuracy](Resources/firstTrial_loss_accuracy.png)
+![first_accuracy_fuction](Resources/first_accuracy_fuction.png)
 
 
-*Third attempt: I reverted back the threshold for the classification column. I also changed the activation function for the three layers to tanh. I did this to see if it would perform better than the relu function. Here are the preformance metrics of this model.
-
-![ASC_Ov2_scores](https://github.com/Wall-E28/neural_network_charity_analysis/blob/main/Images/ASC_Ov2_scores.png)
+* Second attempt:  I added the number of first and second layers with with 12 neuron network in the first layer and 6 in the second. I also changed the the first, second, and output layers' activation fuction as relu, relu, and sigmoid fuctions. The accuracy is higher than the first trail but still less than 75%. Here are the accuracy value and its history figure of this model.
 
 
-*Forth attempt: I removed the " STATUS" column as well as I thought it was confusing the model. I reverted back to two layers and the relu activation function. Lastly, I changed the neurons to 12 in the first layer and 8 in the second layer. This was to increase the parameters passed from the first layer to the second layer from 54 to 104. Here are the performance metrics of this model.
+![secondTrial_loss_accuracy](Resources/secondTrial_loss_accuracy.png)
+![second_accuracy_fuction](Resources/second_accuracy_fuction.png)
 
-![ASC_Ov3_scores](https://github.com/Wall-E28/neural_network_charity_analysis/blob/main/Images/ASC_Ov3_scores.png)
 
-*Fifth attempt: I removed the " STATUS" column as well as I thought it was confusing the model. I reverted back to two layers and the relu activation function. Lastly, I changed the neurons to 12 in the first layer and 8 in the second layer. This was to increase the parameters passed from the first layer to the second layer from 54 to 104. Here are the performance metrics of this model.
+* Third attempt:  I added third layers with the activation functions: relu, and sigmoid fuctions. By adding a third layer, I wanted to give the model another chance to reweight the inputs from the second layer to the third. However, the accuracy is the same with the second trail and still less than 75%. Here are the accuracy value and its history figure of this model.
 
-![ASC_Ov3_scores](https://github.com/Wall-E28/neural_network_charity_analysis/blob/main/Images/ASC_Ov3_scores.png)
+![thirdTrial_loss_accuracy](Resources/tirdTrial_loss_accuracy.png)
+![third_accuracy_fuction](Resources/thrid_accuracy_fuction.png)
+
+
+* Forth attempt: I also lowered the threshold for the classification and APPLICATION_TYPE columns so that there were more unique values from that column. I also divided the ask_amount colume to specfic values and merged it to the application_df. The accuracy slightly increased but still slimliar to the second, third tirals. Here are the accuracy value and its history figure of this model.
+
+![fourthTrial_loss_accuracy](Resources/fourthTrial_loss_accuracy.png)
+![fourth_accuracy_fuction](Resources/fourth_accuracy_fuction.png))
+
+* Fifth attempt: Lastly, I removed the " STATUS" column as well as I thought it was confusing the model. I also remove the possible cartegories but the accuracy is still not changed much when comparing with the prior trials. Here are the accuracy value and its history figure of this model.
+
+
+![fifthTrial_loss_accuracy](Resources/fifthTrial_loss_accuracy.png)
+![fifth_accuracy_fuction](Resources/fifth_accuracy_fuction.png)
 
 ## Summary
 
-After five attempts, I was unable to create a model that could preform a 75% accuracy rating. This is potential becasue I got rid of too many columns, I did not use the correct activation function, or I did not have hte right amount of layers and neurons. These were the main areas I continued the change with little to no improvement. Next time, I would research more about activation functions to make sure that I am always choosing the right one based on the data. 
+After five attempts, I was unable to create a model that could preform a 75% accuracy rating. I added extra layers, applied the different activation fuctions, and remove and added the additional valiables in the database, but it still lowere than the target accuracy values. This is potentially due to the noisy variables. Even we use correct layer size and activation fuction, the data itself most important to determine the accuracy of model. 
